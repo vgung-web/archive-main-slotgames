@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jiuyou.com · 稳定入口与页面说明</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #faf8f5;
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            color: #2c3e50;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fffcf9;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+        }
+        /* 导航 */
+        nav {
+            padding: 24px 32px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ece4da;
+            flex-wrap: wrap;
+        }
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            color: #3e5a6b;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.95rem;
+            color: #5b6f7c;
+        }
+        .nav-links a {
+            color: #3e5a6b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #a5775a;
+        }
+        /* Hero */
+        .hero {
+            padding: 56px 32px 48px;
+            text-align: left;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: 0.5px;
+            color: #2e3d47;
+            margin-bottom: 18px;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 680px;
+            color: #4d6270;
+        }
+        .hero .accent {
+            color: #a5775a;
+        }
+        /* 核心介绍 */
+        .core-intro {
+            padding: 0 32px 40px;
+        }
+        .core-intro p {
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        .core-intro a {
+            color: #a5775a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #dac1b0;
+            transition: text-decoration-color 0.2s;
+        }
+        .core-intro a:hover {
+            text-decoration-color: #a5775a;
+        }
+        /* 场景模块 */
+        .scenes {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            padding: 0 32px 48px;
+        }
+        .scene-card {
+            background: #ffffff;
+            border: 1px solid #ede6dd;
+            border-radius: 12px;
+            padding: 28px 22px 24px;
+            transition: box-shadow 0.25s;
+        }
+        .scene-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+        .scene-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: #a5775a;
+        }
+        .scene-card h3 {
+            font-weight: 500;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #2e3d47;
+        }
+        .scene-card p {
+            font-size: 0.92rem;
+            color: #4f6472;
+        }
+        /* 引用/提示框 */
+        .notice-box {
+            margin: 0 32px 48px;
+            padding: 20px 24px;
+            background: #f6f1ea;
+            border-left: 5px solid #a5775a;
+            border-radius: 6px;
+            color: #3e535f;
+            font-size: 0.95rem;
+        }
+        .notice-box strong {
+            color: #2e3d47;
+            font-weight: 600;
+        }
+        /* FAQ 摘要 */
+        .faq-section {
+            padding: 0 32px 48px;
+        }
+        .faq-section h2 {
+            font-weight: 450;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2e3d47;
+        }
+        .faq-item {
+            border-bottom: 1px solid #ede6dd;
+            padding: 16px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #2e3d47;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            font-size: 0.93rem;
+            color: #4f6472;
+        }
+        /* footer */
+        footer {
+            border-top: 1px solid #ece4da;
+            padding: 28px 32px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #6f828f;
+        }
+        footer a {
+            color: #6f828f;
+            text-decoration: none;
+            border-bottom: 1px dotted #cdc1b4;
+        }
+        footer a:hover {
+            color: #a5775a;
+            border-bottom-color: #a5775a;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 20px 20px 12px;
+            }
+            .hero {
+                padding: 36px 20px 30px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .core-intro,
+            .scenes,
+            .notice-box,
+            .faq-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .scenes {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            footer {
+                flex-direction: column;
+                gap: 8px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 顶部导航 -->
+    <nav>
+        <span class="nav-logo">jiuyou·入口</span>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>一个安静、稳定的页面入口</h1>
+        <p>没有弹窗，没有冗余跳转。这里只呈现 <span class="accent">jiuyou.com</span> 最基础的介绍与导航，让你快速了解它提供的服务方向。</p>
+    </section>
+
+    <!-- 核心介绍，自然嵌入链接 -->
+    <section class="core-intro">
+        <p>许多人在寻找一个长期可用的服务入口时，会面临信息过载的困扰。而 <a href="https://register-jiuyou.com">jiuyou.com</a> 的设计初衷恰好与此相反——保持页面结构轻量，把选择权交还给使用者。无论是首次接触还是回头查看说明，这里都能提供一个不被打扰的阅读环境。</p>
+        <p>以下三个场景，可以帮助你判断这个入口是否适合你的日常使用节奏。每个场景都对应一种可能的访问习惯，你可以对照自己的需求来参考。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section class="scenes">
+        <div class="scene-card">
+            <div class="scene-icon">📘</div>
+            <h3>信息查阅型</h3>
+            <p>偶尔需要回顾某个功能说明或条款摘要，希望页面打开后直接定位到关键段落，无需多层菜单或弹窗干扰。</p>
+        </div>
+        <div class="scene-card">
+            <div class="scene-icon">🔗</div>
+            <h3>快速跳转型</h3>
+            <p>日常使用中需要频繁从书签或笔记中打开一个稳定的链接，对页面加载速度和布局一致性有要求。</p>
+        </div>
+        <div class="scene-card">
+            <div class="scene-icon">🧭</div>
+            <h3>初次了解型</h3>
+            <p>刚接触到这个入口，想通过简洁的介绍判断是否值得进一步使用，而不是被大量宣传信息淹没。</p>
+        </div>
+    </section>
+
+    <!-- 提示框 / 引用块 -->
+    <div class="notice-box">
+        <strong>一点说明：</strong> 本页面仅作为静态介绍与导航使用，不收集任何个人信息，也不包含第三方追踪脚本。所有指向 <a href="https://register-jiuyou.com" style="text-decoration: underline; color: #a5775a; text-underline-offset: 3px;">jiuyou.com</a> 的链接均直接跳转至对应地址，不经过中间页。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <section class="faq-section">
+        <h2>常见疑问 · 简答</h2>
+        <div class="faq-item">
+            <div class="faq-q">这个入口和主站有什么区别？</div>
+            <div class="faq-a">本页是独立的介绍页，主站负责具体服务与功能。你可以把这里当作一个说明书式的起点。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">页面会经常变动吗？</div>
+            <div class="faq-a">布局和内容会不定期优化，但核心链接与说明方向会保持稳定，避免频繁跳转。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我该如何记住这个入口？</div>
+            <div class="faq-a">最简单的方式：浏览器收藏夹里添加一条书签，地址就是 <a href="https://register-jiuyou.com" style="color: #a5775a; text-decoration: underline; text-underline-offset: 3px;">jiuyou.com</a>，名称可以自己命名。</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <span>© 2025 · 稳定入口说明</span>
+        <span>内容仅供介绍，具体以实际页面为准 · <a href="#">返回顶部</a></span>
+    </footer>
+</div>
+</body>
+</html>
